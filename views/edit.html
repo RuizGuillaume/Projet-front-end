@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 id="editTitle">Ajouter un article</h3>
+    <div id="formEditProduct">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="fieldProductName" type="text" class="validate">
+                        <label for="fieldProductName" class="active">Nom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="fieldProductQuantity" type="number" class="validate">
+                        <label for="fieldProductQuantity" class="active">Quantité</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <button class="waves-effect waves-light btn" onclick="editController.save()"><i class="material-icons right">check</i>Enregistrer</button>
+        </div>
+    </div>
+</div>
