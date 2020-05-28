@@ -1,5 +1,5 @@
-const serviceBaseUrl = "postgressql://postgres:7309@localhost:5432/Products"
-
+const serviceBaseUrl = "postgressql://postgres:555@localhost:5432/Products"
+//http://localhost:5555/listProduct
 class ProductAPI {
     getAll() {
         return fetchJSON(serviceBaseUrl)
@@ -9,7 +9,7 @@ class ProductAPI {
     }
     delete(id) {
         return fetch(`${serviceBaseUrl}/${id}`, { method: 'DELETE' })
-    }z
+    }
     insert(product) {
         return fetch(serviceBaseUrl, {
             method: 'POST',

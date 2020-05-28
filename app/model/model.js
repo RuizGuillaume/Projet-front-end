@@ -6,7 +6,6 @@ class Model {
         let products = []
         for (let product of await this.api.getAll()) {
             products.push(Object.assign(new Product(), product))
-
         }
         return products
     }
