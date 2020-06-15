@@ -1,23 +1,23 @@
-const serviceBaseUrl = "http://localhost:5555/product"
-class ProductAPI {
+const serviceBaseUrlList = "http://localhost:5555/productList"
+class ProductListAPI {
     getAll() {
-        return fetchJSON(serviceBaseUrl)
+        return fetchJSON(serviceBaseUrlList)
     }
     get(id) {
-        return fetchJSON(`${serviceBaseUrl}/${id}`)
+        return fetchJSON(`${serviceBaseUrlList}/${id}`)
     }
     delete(id) {
-        return fetch(`${serviceBaseUrl}/${id}`, { method: 'DELETE' })
+        return fetch(`${serviceBaseUrlList}/${id}`, { method: 'DELETE' })
     }
     insert(product) {
-        return fetch(serviceBaseUrl, {
+        return fetch(serviceBaseUrlList, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(product)
         })
     }
     update(product) {
-        return fetch(serviceBaseUrl, {
+        return fetch(serviceBaseUrlList, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(product)

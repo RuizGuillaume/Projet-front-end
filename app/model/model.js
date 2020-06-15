@@ -1,6 +1,7 @@
 class Model {
     constructor() {
         this.api = new ProductAPI()
+         this.apiList = new ProductListAPI()
     }
     async getAllProducts() {
         let products = []
@@ -8,6 +9,13 @@ class Model {
             products.push(Object.assign(new Product(), product))
         }
         return products
+    }
+    async getAllProductList() {
+        let productList = []
+        for (let productList of await this.apiList.getAll()) {
+            productList.push(Object.assign(new ProductList(), productList))
+        }
+        return productList
     }
     async getProduct(id) {
         try {

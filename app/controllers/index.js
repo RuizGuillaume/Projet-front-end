@@ -3,24 +3,45 @@ class IndexController extends BaseController {
         super()
         this.tableAllProducts = $('#tableAllProducts')
         this.tableBodyAllProducts = $('#tableBodyAllProducts')
-        this.displayAllProducts()
+        //this.displayAllProducts()
     }
-    async displayAllProducts() {
+    // async displayAllProducts() {
+    //     let content = ''
+    //     this.tableAllProducts.style.display = "none"
+    //     try {
+    //         for (const product of await this.model.getAllProducts()) {
+    //             const date = product.builddate.toLocaleDateString()
+    //             content += `<tr><td>${product.toString()}</td>
+    //                 <td>${product.price}</td>
+    //                 <td>${date}</td>
+    //                 <td class="icon">
+    //                 <button class="btn" onclick="indexController.displayConfirmDelete(${product.id})"><i class="material-icons">delete</i></button>
+    //                 <button class="btn" onclick="indexController.edit(${product.id})"><i class="material-icons">edit</i></button>
+    //                 </td></tr>`
+    //         }
+    //         this.tableBodyAllProducts.innerHTML = content
+    //         this.tableAllProducts.style.display = "block"
+    //     } catch (err) {
+    //         console.log(err)
+    //         this.displayServiceError()
+    //     }
+    // }
+    async displayAllProductList() {
         let content = ''
         this.tableAllProducts.style.display = "none"
         try {
-            for (const product of await this.model.getAllProducts()) {
-                const date = product.builddate.toLocaleDateString()
-                content += `<tr><td>${product.toString()}</td>
-                    <td>${product.price}</td>
+            for (const productList of await this.model.getAllProductList()) {
+                const date = productList.date.toLocaleDateString()
+                content += `<tr><td>${productList.toString()}</td>
+                    <td>${productList.label}</td>
                     <td>${date}</td>
                     <td class="icon">
-                    <button class="btn" onclick="indexController.displayConfirmDelete(${product.id})"><i class="material-icons">delete</i></button>
-                    <button class="btn" onclick="indexController.edit(${product.id})"><i class="material-icons">edit</i></button>
+                    <button class="btn" onclick="indexController.displayConfirmDelete(${productList.id})"><i class="material-icons">delete</i></button>
+                    <button class="btn" onclick="indexController.edit(${productList.id})"><i class="material-icons">edit</i></button>
                     </td></tr>`
             }
-            this.tableBodyAllProducts.innerHTML = content
-            this.tableAllProducts.style.display = "block"
+            this.tableBodyAllProductList.innerHTML = content
+            this.tableAllProductList.style.display = "block"
         } catch (err) {
             console.log(err)
             this.displayServiceError()
@@ -38,7 +59,7 @@ class IndexController extends BaseController {
                 return
             }
             this.selectedProduct = object
-            navigate("edit")
+            navigate('edit')
         } catch (err) {
             console.log(err)
             this.displayServiceError()

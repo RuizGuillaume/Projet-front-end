@@ -9,3 +9,13 @@ class Product {
         return `${this.productName}`
     }
 }
+class ProductList {
+    constructor(shop, date, archived) {
+        this.shop = shop;
+        this.date = date;
+        this.archived = archived;
+    }
+    toString() {
+        return `${this.shop + " " + this.date}`
+    }
+}

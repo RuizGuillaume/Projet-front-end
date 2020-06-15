@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exemples NodeJS+Express</title>
+    <title>Listes de courses</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,19 +15,20 @@
     <div id="modalConfirmDelete" class="modal">
         <div class="modal-content">
             <h4>Supprimer</h4>
-            <p>Etes vous sûr de vouloir supprimer <span id="spanDeleteObject"></span> ?</p>
+            <p>Etes-vous sûr de vouloir supprimer <span id="spanDeleteObject"></span> ?</p>
         </div>
         <div class="modal-footer">
             <a href="#" class="modal-close waves-effect waves-green btn-flat" id="btnDelete">Oui</a>
         </div>
     </div>
 
+    <script type="application/ecmascript" src="app/services/productapi.js"></script>
+    <script type="application/ecmascript" src="app/services/productListapi.js"></script>
     <script type="application/ecmascript" src="app/tools.js"></script>
     <script type="application/ecmascript" src="app/model/classes.js"></script>
     <script type="application/ecmascript" src="app/model/model.js"></script>
-    <script type="application/ecmascript" src="app/services/productapi.js"></script>
     <script type="application/ecmascript" src="app/controllers/basecontroller.js"></script>
     <script type="application/ecmascript" src="app/controllers/baseformcontroller.js"></script>
-    <script>navigate("index")</script>
+    <script>navigate('index')</script>
 </body>
 </html>
